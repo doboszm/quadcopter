@@ -6,3 +6,5 @@
 *.hst
 *.ver
 *.toc
+*.blg
+*.bbl
