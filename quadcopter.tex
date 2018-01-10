@@ -1,8 +1,10 @@
 \documentclass[12pt]{article}
 \usepackage{hyperref}
 \usepackage{graphicx}
-\usepackage{color}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{listings}
+\usepackage{float}
+\restylefloat{table}
 \graphicspath{ {images/} }
 
 \sloppy
@@ -52,25 +54,27 @@
 \pagebreak
 \tableofcontents
 \pagebreak
+
 \section{Introduction}
 
-The purpose of this document is to record and explain the design process of the  and why each decision was made. Since I have little experience with the design process, all steps performed for this project were made up as I went along and may or may not be representative of the real-world design process. Most or all decisions are made using a weighted decision matrix using information found online. This document was created to better organize my thoughts and each decision I made for future collaborators to get up to speed and to learn what is going on. All information that is obtained from outside sources is cited with footnotes, however only the url or website is noted and no proper citation format is used. All information is presented in a way that someone with little to no technical experience can understand (hopefully).
+The purpose of this document is to record and explain the design process of the quadcopter and why each decision was made. Since I have little experience with the design process, all steps performed for this project were made up as I went along and may or may not be representative of the real-world design process. Most or all decisions are made using a weighted decision matrix using information found online. This document was created to better organize my thoughts and each decision I made for future collaborators to get up to speed and to learn what is going on. All information that is obtained from outside sources is cited with footnotes, however only the url or website is noted and no proper citation format is used. All information is presented in a way that someone with little to no technical experience can understand (hopefully).
 \\
 
-A quadcopter is a four rotor manned or unmanned vehicle used mostly for aerial photography. Many sensor such as gyroscopes and accelerators which are located in the flight controller are used to provide the aircraft with feedback on altitude, acceleration, orientation, etc. This data is then sent to the motors and the quadcopter's position is compensated if it does not match the user input from the transmitter. More info can be found \href{https://en.wikipedia.org/wiki/Quadcopter}{\color{cyan}here}.
+A quadcopter is a four rotor manned or unmanned vehicle used mostly for aerial photography. Many sensors such as gyroscopes and accelerometers, which are located on the flight controller, are used to provide the aircraft with feedback on altitude, acceleration, orientation, etc. This data is then sent to the motors and the quadcopter's position is compensated if it does not match the user input from the transmitter. More info can be found \href{https://en.wikipedia.org/wiki/Quadcopter}{\color{cyan}here}.
 
 \section{Objectives}
 
-The main goal of this project are:
+The main goal of this project are for the quadcopter to be/have:
 \renewcommand{\labelitemi}{\textperiodcentered}
 \begin{itemize}
-\item minimum 8 minutes flight time
+\item a minimum 8 minutes flight time
 \item easily replaceable parts in the event of a failure or crash
-\item space and bracket for mounting of a GoPro camera in the future for aerial photography
+\item space and bracket(s) for mounting of a GoPro camera in the future for aerial photography
 \item small enough to carry in a backpack
 \item room for future expansion such as GPS\footnote[1]{may be omitted if a Version 2 is made later on}
 \end{itemize}
-All decisions made for materials, design, etc will follow these rules strictly.
+
+All decisions that must be made for which materials to use, physical design, etc. will follow these rules strictly.
 \\
 
 Two main design sections will be considered, the frame and the electronics. The frame will consist of the structural components of the quadcopter where all the electronic components will be mounted. The electronic components will include the flight controller, motor, battery and receiver. 
@@ -80,7 +84,37 @@ The main restriction imposed on this project is cost. Most, if not all, decision
 
 \section{Frame Design}
 
-The frame 
+The frame of the quadcopter must meet the following requirements:
+\renewcommand{\labelitemi}{\textperiodcentered}
+\begin{itemize}
+\item strong enough to survive a crash several times
+\item easily replaceable
+\item easily manufacturable or purchased online
+\item as lightweight as possible
+\item mounting locations for GoPro, motors, battery, flight controller, receiver, ESCs\footnote[1]{Electronic Speed Controller; converts battery voltage to three-phase AC signal for motors} and future peripherals
+\item modular system
+\item affordable
+\end{itemize}
+
+Two alternatives exist for frame design: purchasing a prebuilt frame from sites such as eBay or Aliexpress, or 3D printing a frame. To determine which alternative is better, a decision matrix will be considered.
+\begin{table}[H]
+\centering
+\begin{tabular}{llllll}
+ &  & \multicolumn{2}{l}{\cellcolor[HTML]{EFEFEF}Purchased Frame} & \multicolumn{2}{l}{\cellcolor[HTML]{EFEFEF}3D Printed Frame} \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\textbf{Criteria} & \textbf{Wgt} & \textbf{Rating} & \textbf{Score} & \textbf{Rating} & \textbf{Score} \\
+\multicolumn{1}{l|}{\textit{Price}} & \multicolumn{1}{l|}{-0.5} & 2 & \multicolumn{1}{l|}{-1} & 4 & -2 \\
+\multicolumn{1}{l|}{\textit{Replaceability}} & \multicolumn{1}{l|}{0.4} & 4 & \multicolumn{1}{l|}{1.6} & 5 & 2 \\
+\multicolumn{1}{l|}{\textit{Customizable}} & \multicolumn{1}{l|}{0.5} & 0 & \multicolumn{1}{l|}{0} & 5 & 2.5 \\
+\multicolumn{1}{l|}{\textit{Modular}} & \multicolumn{1}{l|}{0.3} & 2 & \multicolumn{1}{l|}{0.6} & 4 & 1.2 \\
+ &  & Total & 1.2 & Total & 3.7 \\ \hline
+\end{tabular}
+\caption{WDM for Frame}
+\label{my-label}
+\end{table}
+
+
+
 \section{Electronics}
 
 \end{document}
