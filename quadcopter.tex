@@ -4,6 +4,7 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{listings}
 \usepackage{float}
+\usepackage{fixltx2e}
 \restylefloat{table}
 \graphicspath{ {images/} }
 
@@ -42,7 +43,7 @@
 \hline
 \textbf{Revision Date} & \textbf{Description} \\ \hline
 01/09/18 & Initial document \\ \hline
-& \\ \hline
+02/11/18 & Update to use Mavic frame \\ \hline
 & \\ \hline
 
 \end{tabular}
@@ -57,62 +58,110 @@
 
 \section{Introduction}
 
-The purpose of this document is to record and explain the design process of the quadcopter and why each decision was made. Since I have little experience with the design process, all steps performed for this project were made up as I went along and may or may not be representative of the real-world design process. Most or all decisions are made using a weighted decision matrix using information found online. This document was created to better organize my thoughts and each decision I made for future collaborators to get up to speed and to learn what is going on. All information that is obtained from outside sources is cited with footnotes, however only the url or website is noted and no proper citation format is used. All information is presented in a way that someone with little to no technical experience can understand (hopefully).
+The purpose of this document is to record and explain the design process of the quadcopter and why each decision was made. Since I have little experience with the design process, all steps performed for this project were made up as I went along and may or may not be representative of the real-world design process. This document was created to better organize my thoughts and each decision I made for future collaborators to get up to speed and to learn what is going on. All information that is obtained from outside sources is referenced with footnotes, however only the url or website is noted and no proper citation format is used. All information is presented in a way that someone with little to no technical experience can understand (hopefully).
 \\
 
-A quadcopter is a four rotor manned or unmanned vehicle used mostly for aerial photography. Many sensors such as gyroscopes and accelerometers, which are located on the flight controller, are used to provide the aircraft with feedback on altitude, acceleration, orientation, etc. This data is then sent to the motors and the quadcopter's position is compensated if it does not match the user input from the transmitter. More info can be found \href{https://en.wikipedia.org/wiki/Quadcopter}{\color{cyan}here}.
+A quadcopter is a four rotor manned or unmanned vehicle used mostly for aerial photography. Many sensors such as gyroscopes and accelerometers, which are located on the flight controller, are used to provide the aircraft with feedback on altitude, acceleration, orientation, etc. The "heart" of the quadcopter is the flight controller, which takes data from its sensors and the receiver and sends the information to the ESCs\footnote{Electonic Speed Controller; used to convert the DC voltage from the flight controller to a three-phase AC singal for the motors} More info can be found \href{https://en.wikipedia.org/wiki/Quadcopter}{\color{cyan}here}.
+\\
+
+All prices are presented in \$CAD.
 
 \section{Objectives}
 
-The main goal of this project are for the quadcopter to be/have:
+The main objectives of the project are:
 \renewcommand{\labelitemi}{\textperiodcentered}
 \begin{itemize}
-\item a minimum 8 minutes flight time
+\item a minimum of 10 minutes of flight time
 \item easily replaceable parts in the event of a failure or crash
-\item space and bracket(s) for mounting of a GoPro camera in the future for aerial photography
 \item small enough to carry in a backpack
-\item room for future expansion such as GPS\footnote[1]{may be omitted if a Version 2 is made later on}
 \end{itemize}
 
 All decisions that must be made for which materials to use, physical design, etc. will follow these rules strictly.
 \\
 
+Secondary objectives include:
+\renewcommand{\labelitemi}{\textperiodcentered}
+\begin{itemize}
+\item GPS support
+\item sonar for low-altitude hold
+\item space and bracket(s) for mounting of a GoPro camera in the future for aerial photography
+\end{itemize}
+
 Two main design sections will be considered, the frame and the electronics. The frame will consist of the structural components of the quadcopter where all the electronic components will be mounted. The electronic components will include the flight controller, motor, battery and receiver. 
 \\
 
 The main restriction imposed on this project is cost. Most, if not all, decisions are made with cost as one of the heaviest factors. Time and difficulty are not as important as this project does not have a deadline and new skills can be learned along the way.
+\\
+
+For all custom components, either SolidWorks or Altium Designer will be used.
 
 \section{Frame Design}
 
-The frame of the quadcopter must meet the following requirements:
+The frame design is the section that will cause the most trouble, as I have little to no mechanical experience and designing a frame that is both lightweight and durable is an entire project in itself. To simplify the designing of the frame, CdRsKuLL's Mavic F3 v4.1 frame from Thingiverse will be used.
+
+\subsection{Frame Material}
+
+According to Simplify3D, the estimated volume of the frame when 3D printed will be 280 cm\textsuperscript{3}. Depending on the material chosen, a weight can be calculated and suitable motors can be selected.
+\\
+
+Five materials were considered for the frame design: PLA (Polylactic Acid), ABS (Acrylonitrile Butadiene Styrene), Carbon Fiber PLA and Nylon and PETG (Polyethylene Terephthalate Glycol). The advantages and disadvantages of each material were investigated and are presented below.
+\\
+
+\textbf{PLA:}
 \renewcommand{\labelitemi}{\textperiodcentered}
 \begin{itemize}
-\item strong enough to survive a crash several times
-\item easily replaceable
-\item easily manufacturable or purchased online
-\item as lightweight as possible
-\item mounting locations for GoPro, motors, battery, flight controller, receiver, ESCs\footnote[1]{Electronic Speed Controller; converts battery voltage to three-phase AC signal for motors} and future peripherals
-\item modular system
-\item affordable
+\item[+] easy to print with
+\item[+] biodegradable
+\item[-] warps if exposed to sunlight for too long
+\item[-] lower structural stability compared to other materials
+\item[Price:] \$31 per kg 
+\item[Density:] 1.25g/cm\textsuperscript{3}
 \end{itemize}
 
-Two alternatives exist for frame design: purchasing a prebuilt frame from sites such as eBay or Aliexpress, or 3D printing a frame. To determine which alternative is better, a decision matrix will be considered.
-\begin{table}[H]
-\centering
-\begin{tabular}{llllll}
- &  & \multicolumn{2}{l}{\cellcolor[HTML]{EFEFEF}Purchased Frame} & \multicolumn{2}{l}{\cellcolor[HTML]{EFEFEF}3D Printed Frame} \\ \hline
-\rowcolor[HTML]{EFEFEF} 
-\textbf{Criteria} & \textbf{Wgt} & \textbf{Rating} & \textbf{Score} & \textbf{Rating} & \textbf{Score} \\
-\multicolumn{1}{l|}{\textit{Price}} & \multicolumn{1}{l|}{-0.5} & 2 & \multicolumn{1}{l|}{-1} & 4 & -2 \\
-\multicolumn{1}{l|}{\textit{Replaceability}} & \multicolumn{1}{l|}{0.4} & 4 & \multicolumn{1}{l|}{1.6} & 5 & 2 \\
-\multicolumn{1}{l|}{\textit{Customizable}} & \multicolumn{1}{l|}{0.5} & 0 & \multicolumn{1}{l|}{0} & 5 & 2.5 \\
-\multicolumn{1}{l|}{\textit{Modular}} & \multicolumn{1}{l|}{0.3} & 2 & \multicolumn{1}{l|}{0.6} & 4 & 1.2 \\
- &  & Total & 1.2 & Total & 3.7 \\ \hline
-\end{tabular}
-\caption{WDM for Frame}
-\label{my-label}
-\end{table}
 
+\textbf{ABS:}
+\renewcommand{\labelitemi}{\textperiodcentered}
+\begin{itemize}
+\item[+] high durability
+\item[+] flexible and lightweight
+\item[-] unpleasant fumes released when printing
+\item[-] prone to warping without heated enclosure
+\item[Price:] \$30 per kg
+\item[Density:] 1.05g/cm\textsuperscript{3}
+\end{itemize}
+
+\textbf{CF PLA:}
+\renewcommand{\labelitemi}{\textperiodcentered}
+\begin{itemize}
+\item[+] very high durability mimicking carbon fiber
+\item[+] prints like PLA
+\item[-] required hardened nozzle
+\item[-] expensive
+\item[Price:] \$60 per kg + nozzle
+\item[Density:] 1.30g/cm\textsuperscript{3}
+\end{itemize}
+
+\textbf{Nylon:}
+\renewcommand{\labelitemi}{\textperiodcentered}
+\begin{itemize}
+\item[+] strong. durable and flexible
+\item[+] less brittle than PLA and ABS
+\item[-] high temperature required for printing
+\item[-] emits toxic fumes when printing
+\item[Price:] \$50 per kg
+\item[Density:] 1.15g/cm\textsuperscript{3}
+\end{itemize}
+
+\textbf{PETG:}
+\renewcommand{\labelitemi}{\textperiodcentered}
+\begin{itemize}
+\item[+] high durability and flexibility
+\item[+] does not shrink
+\item[+] does not warp
+\item[-] requires fine tuning of printer settings
+\item[Price:] \$40 per kg
+\item[Density:] 1.27g/cm\textsuperscript{3}
+\end{itemize}
 
 
 \section{Electronics}
