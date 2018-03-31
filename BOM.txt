@@ -1,0 +1,68 @@
+1x Naza M v2 FC (97€ two years old from Ebay)
+1x Multistar High Capacity 3S 3000mAh Multi-Rotor Lipo-Pack (15,75€ from Hobby King)
+2x Black Widow 2204 1900KV Mit Built-In ESC CW (each 7,27€ from Hobby King)
+2x Black Widow 2204 1900KV Mit Built-In ESC CCW (each 21,66€ from Hobby King)
+1x Turnigy Evolution Radio with receiver (63,16€ from Hobby King)
+1x Matek Mini/Micro Power Hub Energieverteiler PDB w/BEC 5 V & 12 V für FPV QAV250 (about 5€ from Ali Express)
+4x DJI Mavic Pro - folding propellers 8330 with gold stripes (9,99€ from Amazon)
+1x capton copper tape to insulate the receiver platine and to shelter the GPS from magnetic fields (about 7€ from Amazon)
+--------------------------------
+1x SP Racing F3 Deluxe
+4x Emax 2213 935KV CW Motors with Self-Locking Nylon Nuts
+1x Hobbywing 4in1 20A Mini ESC
+1x HC-SR04 Sonar Sensor
+1x Naze Mini M7n GPS LITEBEE RadioLink M8N GPS SE100
+1x WS2812B 2*2 LED
+1x Multistar 3000mAh LiHv Battery
+4x Mavic Props
+1x FlySky FS-I6 Remote + Flysky FS-IA6 Receiver
+1x HC-06 Bluetooth Module
+-----------------------------------
+Spektrum Naze32 Rev6 Aero
+Spektrum Diversity Receiver
+Hobbywing 4n1 Xrotor 20a
+Overlander X2204 Multi-Rotor Motors 2300KV
+WS2812B 2*2 4-Bit Full Color 5050 RGB LED
+Much wiring, 2.5 bullet connectors, RGB leds, solder, filament, nuts & bolts
+-----------------------------
+
+FC
+I decided to use for a flight controller Naza m lite because I have experienced with it in my another quad F450 and I know how it runs and I like it, easy setup, gimbal control, Fail safe, and more options. And I decided to choose M8N GPS for to remove the cover; one nose part runs in this forum for this GPS type.
+Naza M Multi Flyer Versión Lite Flight Control w/PMU Módulo de alimentación y LED y Cables y M8N GPS y sostenedor del soporte
+https://es.aliexpress.com/item/Original-DJI-Naza-M-Lite-Multi-Flyer-Version-Flight-Control-Controller-w-PMU-Power-Module/32477697370.html?spm=a2g0s.9042311.0.0.nlh3wm
+
+Engines
+I use the same as in my other F450 less spare parts 
+XXD A2212 1000KV Brushless Motor For RC Airplane Quadcopter
+https://www.banggood.com/Wholesale-XXD-A2212-KV1000-Brushless-Motor-H363-For-RC-Airplane-Quadcopter-p-57432.html?rmmds=myorder&cur_warehouse=CN
+
+ESC
+4X Racerstar RS20A 20A BLHELI_S OPTO 2-4S ESC Support Oneshot42 Multishot for FPV Racing
+https://www.banggood.com/4X-Racerstar-RS20A-20A-BLHELI_S-OPTO-2-4S-ESC-Support-Oneshot42-Multishot-for-FPV-Racing-p-1064324.html?rmmds=myorder&cur_warehouse=CN
+
+PDB
+I will try to use this if I have some space; it's the smallest I've been able to.
+Matek Mini Power Hub Power Distribution Board With BEC 5V And 12V for RC Drone FPV Racing
+https://www.banggood.com/Matek-Mini-Power-Hub-Power-Distribution-Board-With-BEC-5V-And-12V-For-FPV-Multicopter-p-1005549.html?rmmds=myorder&cur_warehouse=CN
+
+Propellers
+I want to use folding propellers I took same components like @audiot diary.
+Multirotor Folding Propeller 7x4.5 Black (CW/CCW) (2pcs)
+https://hobbyking.com/en_us/multirotor-folding-propeller-7x4-5-black-cw-ccw-2pcs.html
+25mm Folding Propeller Adapter for 3.17mm Shaft (Gold) 1 Pair
+https://hobbyking.com/en_us/25mm-folding-propeller-adapter-for-3-17mm-shaft-gold-1-pair.html
+
+At home I have some screws and nuts and I have also bought:
+Suleve™ M3CH3 M3 Carbon Steel Allen bolt 4-25mm Button Head Hex Socket Cap Screw Bolt Metric 240pcs
+https://www.banggood.com/240pcs-M3-DIN912-Hex-Socket-Head-Cap-Screw-Nut-Assorted-Kits-4-25mm-p-1074609.html?rmmds=myorder&cur_warehouse=CN
+Suleve™ M3BN1 M3*4mm H62 Brass Knurl Nuts DIY Accessories 100pcs
+https://www.banggood.com/100pcs-M34mm-H62-Brass-Knurl-Nuts-DIY-Accessories-p-971077.html?rmmds=myorder&cur_warehouse=CN
+100Pcs M3 x 5mm Brass Single Pass Knurled Nuts Female Thread Blind Hole Insert Embedded Nuts
+https://www.banggood.com/100Pcs-M3-x-5mm-Brass-Single-Pass-Knurled-Nuts-Female-Thread-Blind-Hole-Insert-Embedded-Nuts-p-1185240.html?rmmds=myorder&cur_warehouse=CN
+20 UNIDS M6 * 7 de acero Inoxidable bola de émbolo de resorte
+https://es.aliexpress.com/item/20PCS-M6-7-Stainless-steel-ball-spring-plunger/32822201458.html?spm=a2g0s.9042311.0.0.2aWhs3
+
+For transmitter and receiver I will use one old that I had. For principal flying tests, but I love this type of transmitter, but I don’t know if it will be run with naza m lite.. Anyone know it?
+https://www.banggood.com/IRangeX-iRX-IR8M-2_4G-8CH-Multi-Protocol-Transmitter-With-PPM-S_BUS-Mini-Receiver-p-1226058.html?rmmds=cart_middle_products&cur_warehouse=CN
+---------------------------------------
+
