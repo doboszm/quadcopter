@@ -96,7 +96,7 @@ Two main design sections will be considered, the frame and the electronics. The 
 The main restriction imposed on this project is cost. Most, if not all, decisions are made with cost as one of the heaviest factors. Time and difficulty are not as important as this project does not have a deadline and new skills can be learned along the way.
 \\
 
-For all custom components, either SolidWorks or Altium Designer will be used.
+For all custom components, either SolidWorks or Altium Designer will be used, if needed.
 
 \section{Frame Design}
 
@@ -175,10 +175,11 @@ After extensive consideration it was decided that PETG would be used. PETG combi
 \\
 
 To calculate the total weight of the frame, the simple equation below was used:
-\\
 
-\centerline{1.27 g/cm\textsuperscript{3} x 250 cm\textsuperscript{3} = {\color{red}317.5 g}}
-\vspace{5mm}
+\begin{equation}
+density \cdot volume = 1.27\ g/cm\textsuperscript{3} \cdot 250\ cm\textsuperscript{3} = {\color{red}317.5\ g}
+\end{equation}
+
 The battery and electronics weight will be considered in a later section.
 
 \subsection{Frame Finishing}
@@ -187,14 +188,34 @@ The battery and electronics weight will be considered in a later section.
 \section{Electronics}
 
 \subsection{Motors and Propellers}
+The recommended motor that the author used is the Black Widow 2208 1200KV, however this motor is discontinued and no longer available off of HobbyKing. \textbf{To be added later.}
 
 \subsection{ESCs}
+ESC selected to match motor specs. \textbf{To be added later.}
 
 \subsection{Battery}
+The recommended battery is the MultiStar 3000mAh 3S Li-Po. This battery will be used as it is affordable and has a high capacity. The battery is 188g with dimensions 107 x 36 x 28mm. 
+\\
+
+Assuming ideal conditions, the flight time can be calculated using the following formula:
+\\
+
+\begin{equation} 
+\frac{battery\ capacity}{load\ current} = \frac{3000\ mAh}{...\ mA} = ...\ hours = ...\ minutes
+\end{equation}
+This time meets the required minimum 10 minute flight time.
 
 \subsection{Flight Controller and Receiver}
+The recommended flight controller is the \href{https://www.banggood.com/Upgrade-NAZE32-F3-Flight-Controller-Acro-6-DOF-Deluxe-10-DOF-for-Multirotor-Racing-p-1010232.html?ID=17&cur_warehouse=CN}{\color{cyan}Deluxe SP Racing F3.} The one mentioned in the guide is the older version which uses a serial to USB adapter instead of straight USB. It also lacks some of the newer features such as i\textsuperscript{2}c\footnote{Inter-Integrated Circuit; pronounced I-squared-C. A communication protocol that allows peripherals to be controlled by a master circuit, in this case an OLED screen will be driven by the flight controller} which can be used for an OLED\footnote{Organic Light Emitting Diode; a type of display that has a high contrast ratio, used often for small electronics for its low power consumption and price.} screen. For this project, the newer version will be used for its updated features and availability.
+\\
+
+This flight controller features an accelerometer, gyroscope, barometer and magnetometer (compass). Optionally, a GPS and sonar can be added (which in the case of this quadcopter, will be added). An RGB LED and buzzer can also be added to show the status of the flight controller. There are many other advanced features that are beyond the scope of this project, and therefore will be ignored.
+\\
+
+The receiver that will be used will be the \href{https://hobbyking.com/en_us/frsky-x4rsb-3-16ch-2-4ghz-accst-receiver-w-telemetry.html}{\color{cyan}FrSky X4RSB} for its SBUS\footnote{Radio control communication protocol.} capability and its high build quality. 
 
 \subsection{Miscellaneous Electronics}
+The final electronics will be the sensors such as the GPS, sonar, LED, buzzer, etc. These all interface with the flight controller and provide the CPU with any environmental data it may need. For example, the GPS can be used for flight logging, return to home, and pre planned routes. The sonar is used to allow for low-altitude hold.
 
 \section{Software}
 
