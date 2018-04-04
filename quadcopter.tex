@@ -43,8 +43,9 @@
 \hline
 \textbf{Revision Date} & \textbf{Description} \\ \hline
 01/09/18 & Initial document \\ \hline
-02/11/18 & Update to use Mavic frame \\ \hline
+02/11/18 & Update to use mavic frame design \\ \hline
 03/31/18 & Added electronics section \\ \hline
+& \\ \hline
 
 \end{tabular}
 \end{center}
@@ -64,8 +65,6 @@ The purpose of this document is to record and explain the design process of a qu
 A quadcopter is a four rotor manned or unmanned vehicle used mostly for aerial photography. Many sensors such as gyroscopes and accelerometers, which are located on the flight controller, are used to provide the aircraft with feedback on altitude, acceleration, orientation, etc. The "heart" of the quadcopter is the flight controller, which takes data from its sensors and the receiver and sends the information to the ESCs\footnote{Electronic Speed Controller; used to convert the DC voltage from the flight controller to a three-phase AC signal for the motors} More info can be found \href{https://en.wikipedia.org/wiki/Quadcopter}{\color{cyan}here}.
 \\
 
-All prices are presented in \$CAD.
-
 \section{Objectives}
 
 The main objectives of the project are:
@@ -74,7 +73,7 @@ The main objectives of the project are:
 \item a minimum of 10 minutes of flight time
 \item easily replaceable parts in the event of a failure or crash
 \item small enough to carry in a backpack
-\item easy to understand design so people with minimal technical experience can understand
+\item easily understandable design so people with minimal technical experience can learn
 \item price under \$250 USD (not including radio and tools)
 \end{itemize}
 
@@ -99,6 +98,11 @@ The main restriction imposed on this project is cost. Most, if not all, decision
 For all custom components, either SolidWorks or Altium Designer will be used, if needed.
 
 \section{Frame Design}
+\begin{figure}[H]
+\caption{Mavic Pro Clone}
+\centering
+\includegraphics[scale=0.6]{mavic.png}
+\end{figure}
 
 The frame design is the section that will cause the most trouble, as I have little to no mechanical experience and designing a frame that is both lightweight and durable is an entire project in itself. To simplify the designing of the frame, CdRsKuLL's Mavic F3 v4.1 frame from Thingiverse will be used. \href{http://diyrc.co.uk/3d-printed-mavic-clone/mavic-clone-stl-files-version-3-0-f3/}{\color{cyan}Full details can be found here.}
 
@@ -118,7 +122,7 @@ Five materials were considered for the frame design: PLA (Polylactic Acid), ABS 
 \item[+] biodegradable
 \item[-] warps if exposed to sunlight for too long
 \item[-] lower structural stability compared to other materials
-\item[Price:] \$31 per kg 
+\item[Price:] \$31 CAD per kg 
 \item[Density:] 1.25g/cm\textsuperscript{3}
 \end{itemize}
 \vspace{5mm}
@@ -131,7 +135,7 @@ Five materials were considered for the frame design: PLA (Polylactic Acid), ABS 
 \item[+] flexible and lightweight
 \item[-] unpleasant fumes released when printing
 \item[-] prone to warping without heated enclosure
-\item[Price:] \$30 per kg
+\item[Price:] \$30 CAD per kg
 \item[Density:] 1.05g/cm\textsuperscript{3}
 \end{itemize}
 \vspace{5mm}
@@ -143,7 +147,7 @@ Five materials were considered for the frame design: PLA (Polylactic Acid), ABS 
 \item[+] prints like PLA
 \item[-] required hardened nozzle
 \item[-] expensive
-\item[Price:] \$60 per kg + nozzle
+\item[Price:] \$60 CAD per kg + nozzle
 \item[Density:] 1.30g/cm\textsuperscript{3}
 \end{itemize}
 \vspace{5mm}
@@ -155,7 +159,7 @@ Five materials were considered for the frame design: PLA (Polylactic Acid), ABS 
 \item[+] less brittle than PLA and ABS
 \item[-] high temperature required for printing
 \item[-] emits toxic fumes when printing
-\item[Price:] \$50 per kg
+\item[Price:] \$50 CAD per kg
 \item[Density:] 1.15g/cm\textsuperscript{3}
 \end{itemize}
 \vspace{5mm}
@@ -167,7 +171,7 @@ Five materials were considered for the frame design: PLA (Polylactic Acid), ABS 
 \item[+] does not shrink
 \item[+] does not warp
 \item[-] requires fine tuning of printer settings
-\item[Price:] \$40 per kg
+\item[Price:] \$40 CAD per kg
 \item[Density:] 1.27g/cm\textsuperscript{3}
 \end{itemize}
 
@@ -190,11 +194,18 @@ The battery and electronics weight will be considered in a later section.
 \subsection{Motors and Propellers}
 The recommended motor that the author used is the Black Widow 2208 1200KV, however this motor is discontinued and no longer available off of HobbyKing. \textbf{To be added later.}
 
+\begin{figure}[h]
+\caption{Motor orientation for Quad-X mode}
+\centering
+\includegraphics[scale=0.5]{quadx.png}
+\end{figure}
+
+
 \subsection{ESCs}
 ESC selected to match motor specs. \textbf{To be added later.}
 
 \subsection{Battery}
-The recommended battery is the MultiStar 3000mAh 3S Li-Po. This battery will be used as it is affordable and has a high capacity. The battery is 188g with dimensions 107 x 36 x 28mm. 
+The recommended battery is the Multistar 3000mAh 3S Li-Po. This battery will be used as it is affordable and has a high capacity. The battery is 188g with dimensions 107 x 36 x 28mm. 
 \\
 
 Assuming ideal conditions, the flight time can be calculated using the following formula:
@@ -212,11 +223,29 @@ The recommended flight controller is the \href{https://www.banggood.com/Upgrade-
 This flight controller features an accelerometer, gyroscope, barometer and magnetometer (compass). Optionally, a GPS and sonar can be added (which in the case of this quadcopter, will be added). An RGB LED and buzzer can also be added to show the status of the flight controller. There are many other advanced features that are beyond the scope of this project, and therefore will be ignored.
 \\
 
-The receiver that will be used will be the \href{https://hobbyking.com/en_us/frsky-x4rsb-3-16ch-2-4ghz-accst-receiver-w-telemetry.html}{\color{cyan}FrSky X4RSB} for its SBUS\footnote{Radio control communication protocol.} capability and its high build quality. 
+The receiver that will be used will be the \href{https://hobbyking.com/en_us/frsky-x4rsb-3-16ch-2-4ghz-accst-receiver-w-telemetry.html}{\color{cyan}FrSky X4RSB} for its SBUS\footnote{Radio control communication protocol.} capability and high build quality. 
 
 \subsection{Miscellaneous Electronics}
-The final electronics will be the sensors such as the GPS, sonar, LED, buzzer, etc. These all interface with the flight controller and provide the CPU with any environmental data it may need. For example, the GPS can be used for flight logging, return to home, and pre planned routes. The sonar is used to allow for low-altitude hold.
+The final electronics will be the sensors such as the \href{https://www.banggood.com/NZ-GPS-For-NAZE32-Flip32-6dof-10dof-Best-For-QAV250-ZMR250-Multicopter-Quadcopter-p-1015134.html}{\color{cyan}GPS}, sonar, LED, buzzer, etc. These all interface with the flight controller and provide it with any environmental data it may need. For example, the GPS can be used for flight logging, return to home, and pre-planned routes. The sonar is used to allow for low-altitude hold. 
 
 \section{Software}
+
+\section{Bill of Materials}
+The following materials have been / have to be purchased (tax or shipping not considered): 
+\renewcommand{\labelitemi}{\textperiodcentered}
+\begin{itemize}
+\item{1x SP Racing F3 Deluxe - \$31.65 CAD}
+\item{1x HC-SR04 Sonar Sensor - \$2.10 CAD}
+\item{1x NZ Mini GPS - \$15.42 CAD}
+\item{1x 4-in-1 ESC - ??? USD}
+\item{4x motors - ??? USD}
+\item{1x WS2812B 2*2 LED - ??? USD}
+\item{1x Multistar 3000mAh LiHv Battery - \$20.74 USD}
+\item{4x Mavic Props - ??? USD}
+\item{1x X4RSB Receiver - \$26.95 USD}
+\item{1x Spool PETG - \$18.99 USD}
+\end{itemize}
+
+\section{Appendix}
 
 \end{document}
